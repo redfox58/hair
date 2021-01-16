@@ -1,0 +1,9 @@
+<header class="header">
+		{{- if eq .Section "posts"}}
+        {{- partial "schema.html" . -}}
+    {{- end }}
+	<div class="container header__container">
+		{{ partial "logo.html" . }}
+		{{ partial "menu.html" . }}
+	</div>
+</header>
