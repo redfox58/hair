@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://simeyong.com"
 title = "Hair Style"
 languageCode = "en-us"
 paginate = "15" # Number of posts per page
