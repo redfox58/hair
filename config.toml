@@ -1,4 +1,4 @@
-baseurl = "https://simeyong.com"
+baseurl = "https://hair-smoky.vercel.app/"
 title = "Hair Style"
 languageCode = "en-us"
 paginate = "15" # Number of posts per page
