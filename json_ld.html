@@ -1,29 +1,33 @@
 {
   "title": "<%= data.title.replace(/[^\w\s]/gi, '').replace(/(\r\n|\n|\r)/gm,"") %> %>",
   "image": "<%= data.image %>",
-  "LanguageCode": "id",
-  "future": True
-  "PublishDate: "<%var justnow = new Date(Date.now()); var oneyearbefore = new Date(new Date().setMonth(new Date().getMonth() - 6)); var dt = randomDate(justnow, oneyearbefore, 9, 17);%><%=dt.toISOString()%>",
+  "description": "cara mudah membuat <%= data.title %>",
+  "PublishDate": "<%var justnow = new Date(Date.now()); var oneyearbefore = new Date(new Date().setMonth(new Date().getMonth() - 6)); var dt = randomDate(justnow, oneyearbefore, 9, 17);%><%=dt.toISOString()%>",
+  "image": "<%= data.image %>",
+  "image": "<%= data.image %>",
   "thumbnail": "<%= data.image %>",
   "cover": "<%= data.image %>",
-  "categories": "<%= post.category %>",
-  "recipecategory": "<%= post.category %>"
-  "keywords": "<%= post.category %>",
-  "nutrition": "<%=chance.integer({min:100,max:300})%> calories",
-  "tag": ["indonesia", "launch"],
-  "recipeyield": "<%= chance.integer({min: 1, max: 2}) %>"
-  "description": "cara mudah membuat <%= data.title %>"
   "author": "<%= chance.name() %>",
-  "preptime": "PT<%= chance.integer({min: 12, max: 40}) %>M",
-  "cooktime": "PT<%= chance.integer({min: 1, max: 2}) %>H",
-  "calories": "<%= chance.integer({min: 100, max: 300}) %> calories",
-  "fatContent": "<%= chance.integer({min: 5, max: 15}) %> grams fat",
-  "ratingValue": "<%= chance.floating({min: 3, max: 5, fixed: 1}) %>",
-  "reviewCount": "<%= chance.integer({min: 3, max: 15}) %>", 
-  "recipeIngredient": [
-		<% data.ingredients.forEach(function(ingredient, index){ %>"<%= ingredient.quantity %> <%= ingredient.name.replace(/[^\w\s]/gi, '').replace(/(\r\n|\n|\r)/gm,"") %>"<%= (index < data.ingredients.length-1) ? ', ': ''  %>
+  "ratingvalue": "<%= chance.floating({min: 3, max: 5, fixed: 1}) %>",
+  "reviewcount": "<%= chance.integer({min: 3, max: 15}) %>"
+  "recipeingredient": [
+    <% data.ingredients.forEach(function(ingredient, index){ %>"<%= ingredient.quantity %> <%= ingredient.name.replace(/[^\w\s]/gi, '').replace(/(\r\n|\n|\r)/gm,"") %>"<%= (index < data.ingredients.length-1) ? ', ': ''  %>
 		<% }); %>],
-  "recipeInstructions": [ <% data.steps.forEach(function(step, index){ %>
-        "<%= step.instruction.replace('"'/[^\w\s]/gi, '').replace(/(\r\n|\n|\r)/gm,"") %>"<%= (index < data.steps.length-1) ? ', ': ''  %><% }); %>]
+  ],
+  "recipeinstructions": [
+    <% data.steps.forEach(function(step, index){ %>
+    "<%= step.instruction.replace('"'/[^\w\s]/gi, '').replace(/(\r\n|\n|\r)/gm,"") %>"<%= (index < data.steps.length-1) ? ', ': ''  %><% }); %>
+  ],
+  "categories": [
+    "mudah",
+    "cepat"
+  ],
+  "tags": "<%= data.title.split(" ",1);, %>"
+  "katakunci": "<%= data.title.split(" ",2);, %>",
+  "nutrition": "<%=chance.integer({min:100,max:300})%> calories",
+  "recipecuisine": "Indonesian",
+  "preptime": "PT<%= chance.integer({min: 12, max: 40}) %>M",
+  "cooktime": "PT<%= chance.integer({min: 12, max: 40}) %>H,
+  "totaltime": "PT<%= chance.integer({min: 1, max: 3}) %>H",
+  "recipeyield": "<%= chance.integer({min: 3, max: 8}) %> Serving"
 }
-
